@@ -347,46 +347,52 @@ class Cli {
         // perform the selected action
         if (answers.action === 'Print details') {
           // find the selected vehicle and print its details
-          for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              this.vehicles[i].printDetails();
-            }
-          }
+          vehicle?.printDetails();
+          // for (let i = 0; i < this.vehicles.length; i++) {
+          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
+          //     this.vehicles[i].printDetails();
+          //   }
+          // }
         } else if (answers.action === 'Start vehicle') {
           // find the selected vehicle and start it
-          for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              this.vehicles[i].start();
-            }
-          }
+          vehicle?.start();
+          // for (let i = 0; i < this.vehicles.length; i++) {
+          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
+          //     this.vehicles[i].start();
+          //   }
+          // }
         } else if (answers.action === 'Accelerate 5 MPH') {
           // find the selected vehicle and accelerate it by 5 MPH
-          for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              this.vehicles[i].accelerate(5);
-            }
-          }
+          vehicle?.accelerate(5);
+          // for (let i = 0; i < this.vehicles.length; i++) {
+          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
+          //     this.vehicles[i].accelerate(5);
+          //   }
+          // }
         } else if (answers.action === 'Decelerate 5 MPH') {
           // find the selected vehicle and decelerate it by 5 MPH
-          for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              this.vehicles[i].decelerate(5);
-            }
-          }
+          vehicle?.decelerate(5);
+          // for (let i = 0; i < this.vehicles.length; i++) {
+          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
+          //     this.vehicles[i].decelerate(5);
+          //   }
+          // }
         } else if (answers.action === 'Stop vehicle') {
           // find the selected vehicle and stop it
-          for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              this.vehicles[i].stop();
-            }
-          }
+          vehicle?.stop();
+          // for (let i = 0; i < this.vehicles.length; i++) {
+          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
+          //     this.vehicles[i].stop();
+          //   }
+          // }
         } else if (answers.action === 'Turn right') {
           // find the selected vehicle and turn it right
-          for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              this.vehicles[i].turn('right');
-            }
-          }
+          vehicle?.turn('right');
+          // for (let i = 0; i < this.vehicles.length; i++) {
+          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
+          //     this.vehicles[i].turn('right');
+          //   }
+          // }
         } else if (answers.action === 'Turn left') {
           // find the selected vehicle and turn it left
           for (let i = 0; i < this.vehicles.length; i++) {
