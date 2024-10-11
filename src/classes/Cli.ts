@@ -176,6 +176,12 @@ class Cli {
         },
       ])
       .then((answers) => {
+const wheel1 = new Wheel()
+const wheel2 = new Wheel()
+const wheel3 = new Wheel()
+const wheel4 = new Wheel()
+
+
         const truck = new Truck(
 
           Cli.generateVin(),
@@ -185,9 +191,9 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          [],
+          [wheel1, wheel2, wheel3, wheel4],
           parseInt(answers.towingCapacity)
-          
+
 
         );
         // TODO: Use the answers object to pass the required properties to the Truck constructor
@@ -270,7 +276,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          []
+          [frontWheel, rearWheel]
 
         );
 
@@ -335,6 +341,8 @@ class Cli {
             'Turn right',
             'Turn left',
             'Reverse',
+            'Tow',
+            'Wheelie',
             'Select or create another vehicle',
             'Exit',
           ],
@@ -395,22 +403,34 @@ class Cli {
           // }
         } else if (answers.action === 'Turn left') {
           // find the selected vehicle and turn it left
-          for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              this.vehicles[i].turn('left');
-            }
-          }
+          vehicle?.turn('left');
+          // for (let i = 0; i < this.vehicles.length; i++) {
+          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
+          //     this.vehicles[i].turn('left');
+          //   }
+          // }
+        } else if (answers.action === 'Reverse') {
+          // find the selected vehicle and reverse it
+          vehicle?.reverse();
+          // for (let i = 0; i < this.vehicles.length; i++) {
+          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
+          //     this.vehicles[i].reverse();
+          //   }
+          // }
         } else if (answers.action === 'Reverse') {
           // find the selected vehicle and reverse it
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              this.vehicles[i].reverse();
-            }
+
           }
-        } else if (answers.action === 'Reverse') {
-          // find the selected vehicle and reverse it
-          for (let i = 0; i < this.vehicles.length; i++) {
-            
+        } else if (answers.action === 'Tow') {
+          if (vehicle instanceof Truck) {
+            this.findVehicleToTow(vehicle as Truck);
+            return;
+          }
+        }
+        else if (answers.action === 'Wheelie') {
+          if (vehicle instanceof Motorbike) {
+            (vehicle as Motorbike).wheelie();
           }
         }
         // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
