@@ -262,9 +262,8 @@ const wheel4 = new Wheel()
         },
       ])
       .then((answers) => {
-        const frontWheel = new Wheel(parseInt(answers.frontWheelDiameter), answers.frontWheelBrand);
-        const rearWheel = new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand);
-        const wheels = [frontWheel, rearWheel];
+        const wheel1 = new Wheel()
+        const wheel2 = new Wheel()
 
 
         const motorbike = new Motorbike(
@@ -276,7 +275,7 @@ const wheel4 = new Wheel()
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          [frontWheel, rearWheel]
+          [wheel1, wheel2]
 
         );
 

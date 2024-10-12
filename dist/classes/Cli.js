@@ -224,10 +224,9 @@ class Cli {
             },
         ])
             .then((answers) => {
-            const frontWheel = new Wheel(parseInt(answers.frontWheelDiameter), answers.frontWheelBrand);
-            const rearWheel = new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand);
-            const wheels = [frontWheel, rearWheel];
-            const motorbike = new Motorbike(Cli.generateVin(), answers.color, answers.make, answers.model, parseInt(answers.year), parseInt(answers.weight), parseInt(answers.topSpeed), [frontWheel, rearWheel]);
+            const wheel1 = new Wheel();
+            const wheel2 = new Wheel();
+            const motorbike = new Motorbike(Cli.generateVin(), answers.color, answers.make, answers.model, parseInt(answers.year), parseInt(answers.weight), parseInt(answers.topSpeed), [wheel1, wheel2]);
             // TODO: Use the answers object to pass the required properties to the Motorbike constructor
             // TODO: push the motorbike to the vehicles array
             this.vehicles.push(motorbike);
